@@ -19,6 +19,7 @@ app.use(cors());
 
 
 app.use(express.json());
+const apiUrl = process.env.REACT_APP_RENDER_API_URL; 
 
 app.post("/api/auto-suggest", async (req, res) => {
   const inputText = req.body.inputText;
@@ -66,15 +67,15 @@ app.post("/api/auto-suggest", async (req, res) => {
 });
 
 // Routes
-app.use("/api/user", Userroute);
-app.use("/api/products", Productroute); // Mount the product routes
-app.use("/api/search-history", SearchHistoryRoute); // Mount the search history route
-app.use("/api/user-interactions", UserInteractionRoute);
+app.use(`${apiUrl}/api/user`, Userroute);
+app.use(`${apiUrl}/api/products`, Productroute); // Mount the product routes
+app.use(`${apiUrl}/api/search-history`, SearchHistoryRoute); // Mount the search history route
+app.use(`${apiUrl}/api/user-interactions`, UserInteractionRoute);
 
 // Error Handling Middleware
 app.use(notFound);
 app.use(errorHandler);
 // Change the port to 8000
 app.listen(8000, () => {
-  console.log("Server running on http://localhost:8000");
+  console.log(`Server running on ${apiUrl}`);
 });
