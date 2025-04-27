@@ -1,6 +1,6 @@
 // routes/ProductRoute.js
 const express = require("express");
-const Product = require("../model/Product"); // Assuming Product model is created
+const Product = require("../Model/Product"); // Assuming Product model is created
 const router = express.Router();
 
 // GET all products
