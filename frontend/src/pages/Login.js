@@ -8,9 +8,9 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
-import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+const API = require("../utils/axios");
 
 
 const Login = () => {
@@ -44,7 +44,7 @@ const Login = () => {
       };
       
       console.log("API URL:", REACT_APP_RENDER_API_URL); 
-      const { data } = await axios.post(
+      const { data } = await API.post(
 
         "REACT_APP_RENDER_API_URL/api/user/login",
      
