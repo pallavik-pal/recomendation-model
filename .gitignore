@@ -1,0 +1,6 @@
+node_modules/
+backend/results/checkpoint-9/model.safetensors
+backend/results/checkpoint-9/optimizer.pt
+*.csv
+amazon_products.csv
+titles.txt 

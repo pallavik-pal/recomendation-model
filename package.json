@@ -1,0 +1,36 @@
+{
+  "name": "recomendation-model",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pallavik-pal/recomendation-model-e-commerce-site.git"
+  },
+  "author": "Pallavi K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pallavik-pal/recomendation-model-e-commerce-site/issues"
+  },
+  "homepage": "https://github.com/pallavik-pal/recomendation-model-e-commerce-site#readme",
+  "description": "",
+  "dependencies": {
+    "@huggingface/inference": "^2.8.1",
+    "@huggingface/transformers": "^3.1.2",
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-async-handler": "^1.2.0",
+    "huggingface": "^1.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.3",
+    "nodemon": "^3.1.7",
+    "openai": "^4.73.1"
+  }
+}
