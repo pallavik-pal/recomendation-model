@@ -12,7 +12,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const API = require("../utils/axios");
 
-
 const Login = () => {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState();
@@ -43,11 +42,10 @@ const Login = () => {
         },
       };
       
-      console.log("API URL:", REACT_APP_RENDER_API_URL); 
+      const apiUrl = process.env.REACT_APP_RENDER_API_URL; 
+      console.log("API URL:", apiUrl); 
       const { data } = await API.post(
-
-        "REACT_APP_RENDER_API_URL/api/user/login",
-     
+        `${apiUrl}/api/user/login`,
         {
           email,
           password,
@@ -77,6 +75,7 @@ const Login = () => {
       setLoading(false);
     }
   };
+
   return (
     <VStack>
       <FormControl id="email" isRequired>
