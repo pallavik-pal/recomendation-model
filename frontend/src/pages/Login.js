@@ -42,7 +42,7 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
-      const apiUrl = process.env.REACT_APP_API_URL;
+      const apiUrl = process.env.REACT_APP_
       console.log("API URL:", apiUrl); 
       const { data } = await axios.post(
         `${apiUrl}/api/user/login`,

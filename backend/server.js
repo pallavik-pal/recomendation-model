@@ -74,10 +74,10 @@ app.post("/api/auto-suggest", async (req, res) => {
 });
 
 // Routes
-app.use(`${apiUrl}/api/user`, Userroute);
-app.use(`${apiUrl}/api/products`, Productroute); // Mount the product routes
-app.use(`${apiUrl}/api/search-history`, SearchHistoryRoute); // Mount the search history route
-app.use(`${apiUrl}/api/user-interactions`, UserInteractionRoute);
+pp.use('/api/user', Userroute);
+app.use('/api/products', Productroute);
+app.use('/api/search-history', SearchHistoryRoute);
+app.use('/api/user-interactions', UserInteractionRoute);
 
 // Error Handling Middleware
 app.use(notFound);
