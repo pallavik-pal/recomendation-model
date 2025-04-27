@@ -1,7 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
-const API=require(".")
+
 
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
