@@ -1,3 +1,4 @@
+
 import {
   Button,
   FormControl,
@@ -10,13 +11,13 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-const API = require("../utils/axios");
+import API from "../utils/axios";
 
 const Login = () => {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState();
   const toast = useToast();
   const history = useHistory();
   const handleClick = () => setShow(!show);
@@ -24,7 +25,7 @@ const Login = () => {
     setLoading(true);
     if (!email || !password) {
       toast({
-        title: "Please Fill all the Fields",
+        title: "Please Fill all the Feilds",
         status: "warning",
         duration: 5000,
         isClosable: true,
@@ -41,9 +42,7 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
-
-   
-      const response = await API.post(
+      const { data } = await API.post(
         "REACT_APP_RENDER_API_URL/api/user/login",
         {
           email,
@@ -51,29 +50,24 @@ const Login = () => {
         },
         config
       );
-
-      if (response && response.data) {
-        const { data } = response;
-        console.log(data);
-        toast({
-          title: "Login Successful",
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-          position: "bottom",
-        });
-        localStorage.setItem("userInfo", JSON.stringify(data));
-        setLoading(false);
-        history.push("/main");
-      } else {
-        throw new Error("Unexpected response structure");
-      }
-    } catch (error) {
-      console.error(error);  // Log the error for debugging
-      const errorMessage = error?.response?.data?.message || "An error occurred!";
+      console.log(data);
       toast({
-        title: "Error Occurred!",
-        description: errorMessage,
+        title: "Login Successful",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      setLoading(false);
+      history.push("/chats");
+    window.location.reload();  
+    } catch (error) {
+      console.error(error);
+
+      toast({
+        title: "Error Occured!",
+        description: error.response.data.message,
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -82,13 +76,12 @@ const Login = () => {
       setLoading(false);
     }
   };
-
   return (
     <VStack>
       <FormControl id="email" isRequired>
         <FormLabel>Email</FormLabel>
         <Input
-          placeholder="Enter your email id"
+          placeholder="Enter your email id "
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -98,13 +91,13 @@ const Login = () => {
         <InputGroup>
           <Input
             type={show ? "text" : "password"}
-            placeholder="Enter your password"
+            placeholder="Enter your password "
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? "HIDE" : "SHOW"}
+              {show ? "HIDE" : "show"}
             </Button>
           </InputRightElement>
         </InputGroup>
@@ -123,8 +116,8 @@ const Login = () => {
         colorScheme="red"
         width="100%"
         onClick={() => {
-          setEmail("p@gmail.com");
-          setPassword("123");
+          setEmail("guest@example.com");
+          setPassword("123456");
         }}
       >
         Get user credentials
