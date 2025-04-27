@@ -43,7 +43,7 @@ const Login = () => {
         },
       };
       const { data } = await API.post(
-        "REACT_APP_RENDER_API_URL/api/user/login",
+        "/api/user/login",
         {
           email,
           password,
