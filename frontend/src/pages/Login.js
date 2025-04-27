@@ -42,10 +42,9 @@ const Login = () => {
         },
       };
 
-      const apiUrl = process.env.REACT_APP_RENDER_API_URL;
-      console.log("API URL:", apiUrl);
+   
       const response = await API.post(
-        `${apiUrl}/api/user/login`,
+        "REACT_APP_RENDER_API_URL/api/user/login",
         {
           email,
           password,
