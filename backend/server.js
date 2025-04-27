@@ -74,7 +74,7 @@ app.post("/api/auto-suggest", async (req, res) => {
 });
 
 // Routes
-pp.use('/api/user', Userroute);
+app.use('/api/user', Userroute);
 app.use('/api/products', Productroute);
 app.use('/api/search-history', SearchHistoryRoute);
 app.use('/api/user-interactions', UserInteractionRoute);
