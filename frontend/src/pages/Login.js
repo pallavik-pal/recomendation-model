@@ -12,6 +12,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
+
 const Login = () => {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState();
@@ -42,6 +43,7 @@ const Login = () => {
         },
       };
       const apiUrl = process.env.REACT_APP_API_URL;
+      console.log("API URL:", apiUrl); 
       const { data } = await axios.post(
         `${apiUrl}/api/user/login`,
         {

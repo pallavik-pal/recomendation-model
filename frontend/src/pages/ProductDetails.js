@@ -16,6 +16,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
+
 const ProductDetails = () => {
   const { productId } = useParams();
   const history = useHistory();
@@ -31,10 +32,11 @@ const ProductDetails = () => {
   const handleAddToCart = async () => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     const userId = userInfo ? userInfo._id : null;
+
  const apiUrl = process.env.REACT_APP_API_URL;
     if (userId && product._id) {
       try {
-        const response = await fetch(`${apiurl}/api/user-interactions`, {
+        const response = await fetch(`${apiUrl}/api/user-interactions`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -81,9 +83,9 @@ const ProductDetails = () => {
       try {
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
         const userId = userInfo ? userInfo._id : null;
-
+const apiUrl = process.env.REACT_APP_API_URL;
         if (userId) {
-          const response = await fetch(`${apiurl}/api/recommendations/${userId}`);
+          const response = await fetch(`${apiUrl}/api/recommendations/${userId}`);
           const data = await response.json();
           setRecommendedProducts(data.recommendations || []);
         }

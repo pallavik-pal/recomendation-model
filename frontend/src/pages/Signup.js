@@ -8,6 +8,7 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
+
 import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -100,7 +101,7 @@ const Signup = () => {
       };
        const apiUrl = process.env.REACT_APP_API_URL;
       const { data } = await axios.post(
-        `${apiurl}/api/user`,
+        `${apiUrl}/api/user`,
         {
           name,
           email,

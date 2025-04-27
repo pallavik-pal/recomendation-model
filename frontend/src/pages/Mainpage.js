@@ -20,6 +20,7 @@ import { Link, useHistory } from "react-router-dom";
 import data from "./data.json";
 import Footer from "./Footer";
 
+
 const Mainpage = () => {
   const history = useHistory();
   const [searchText, setSearchText] = useState("");
@@ -36,7 +37,7 @@ const Mainpage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`${apiurl}/api/products`);
+        const response = await fetch(`${apiUrl}/api/products`);
         const data = await response.json();
         setProducts(data); // Set the products in the state
       } catch (error) {
@@ -86,7 +87,7 @@ const Mainpage = () => {
 
       if (userId && searchText.trim()) {
         try {
-          const response = await fetch(`${apiurl}/api/search-history`, {
+          const response = await fetch(`${apiUrl}/api/search-history`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -157,7 +158,7 @@ const Mainpage = () => {
 
     if (userId) {
       try {
-        const response = await fetch(`${apiurl}/api/user-interactions`, {
+        const response = await fetch(`${apiUrl}/api/user-interactions`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
