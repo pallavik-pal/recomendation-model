@@ -14,7 +14,14 @@ const { notFound, errorHandler } = require("./middleware/errormiddleware");
 dotenv.config();
 connectDB();
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: "https://frontend-pallavik-pal-pallavik-pals-projects.vercel.app/",  // Replace with your Vercel frontend URL
+  methods: ["GET", "POST"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
 
 
 
