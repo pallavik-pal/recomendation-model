@@ -33,7 +33,7 @@ const ProductDetails = () => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     const userId = userInfo ? userInfo._id : null;
 
- const apiUrl = process.env.REACT_APP_API_URL;
+ const apiUrl = process.env.REACT_APP_RENDER_API_URL;
     if (userId && product._id) {
       try {
         const response = await fetch(`${apiUrl}/api/user-interactions`, {

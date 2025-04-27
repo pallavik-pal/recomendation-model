@@ -33,7 +33,7 @@ const Mainpage = () => {
   const images = ["/1.png", "/4.png", "/2.png", "/3.png"];
 
   // Fetch products from the backend
-    const apiUrl = process.env.REACT_APP_API_URL;
+    const apiUrl = process.env.REACT_APP_RENDER_API_URL;
   useEffect(() => {
     const fetchProducts = async () => {
       try {

@@ -99,7 +99,7 @@ const Signup = () => {
           "Content-type": "application/json",
         },
       };
-       const apiUrl = process.env.REACT_APP_API_URL;
+       const apiUrl = process.env.REACT_APP_RENDER_API_URL;
       const { data } = await axios.post(
         `${apiUrl}/api/user`,
         {
