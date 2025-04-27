@@ -100,7 +100,7 @@ const Signup = () => {
       };
        const apiUrl = process.env.REACT_APP_API_URL;
       const { data } = await axios.post(
-        `${apiurl}/api/user",
+        `${apiurl}/api/user`,
         {
           name,
           email,
