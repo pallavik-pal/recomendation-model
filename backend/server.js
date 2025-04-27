@@ -15,7 +15,7 @@ dotenv.config();
 connectDB();
 const app = express();
 const corsOptions = {
-  origin: "https://frontend-pallavik-pal-pallavik-pals-projects.vercel.app/",  // Replace with your Vercel frontend URL
+  origin: "https://recomendation-pallavik-pal-pallavik-pals-projects.vercel.app/",  // Replace with your Vercel frontend URL
   methods: ["GET", "POST"],
   credentials: true,
 };
