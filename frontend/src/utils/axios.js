@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
+  baseURL: process.env.REACT_APP_RENDER_API_URL,
 });
 
 // Optional: Set up token globally if you use authentication
@@ -13,4 +13,4 @@ API.interceptors.request.use((config) => {
   return config;
 });
 
-export default API;
+export default API;s
