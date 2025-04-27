@@ -24,7 +24,9 @@ Styling:  Chakra UI
 🗂️ Product listing with Categories
 
 🛍️ Suggestions based on product category (Related products)
+
 📞 Contact
+
 Developer: Pallavi k
 
 Email: pallavik15092004@gmail.com
