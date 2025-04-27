@@ -42,7 +42,7 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
-      const apiUrl = process.env.REACT_APP_RENDER_API_URL
+      const apiUrl = "https://recomendation-model.onrender.com"
       console.log("API URL:", apiUrl); 
       const { data } = await axios.post(
         `${apiUrl}/api/user/login`,
