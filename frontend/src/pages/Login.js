@@ -45,7 +45,7 @@ const Login = () => {
       const apiUrl = "https://recomendation-model.onrender.com"
       console.log("API URL:", apiUrl); 
       const { data } = await axios.post(
-        `${apiUrl}/api/user/login`,
+        `${apiUrl}/user/login`,
         {
           email,
           password,
